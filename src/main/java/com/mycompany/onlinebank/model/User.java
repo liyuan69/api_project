@@ -2,6 +2,8 @@
 package com.mycompany.onlinebank.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,34 +23,41 @@ import javax.xml.bind.annotation.XmlRootElement;
 //marshalling/unmarshalling XML / JSON formats.
 @XmlRootElement 
 public class User {
-    private long id;
+    private long userId;
     private String name;
-    private String address;
     private String email;
     private String password;
-    private Account[] acc;// store multiple accounts for User
+    //private Account[] acc;// store multiple accounts for User
+    private List<Account> accList = new ArrayList<>(); //using an arraylist instead of normal array for dynamic sizing
 
     // empty constractor
     public User() {
         
     }
     
-    // constractor with param
-    public User(long id, String name, String address, String email, String password) {
-        this.id = id;
+     // constractor with param
+    public User(long userId, String name, String email, String password) {
+        this.userId = userId;
         this.name = name;
-        this.address = address;
         this.email = email;
         this.password = password;
-        this.acc = new Account[0];
+    }
+    
+    // constractor with param
+    public User(long userId, String name, String email, String password, List<Account> accList) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.accList = accList;
     }
     // create getter and setter
     public long getId() {
-        return id;
+        return userId;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.userId = userId;
     }
 
     public String getName() {
@@ -57,14 +66,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getEmail() {
@@ -83,12 +84,12 @@ public class User {
         this.password = password;
     }
 
-    public Account[] getAcc() {
-        return acc;
+     public List<Account> getList() {
+        return accList;
     }
 
-    public void setAcc(Account[] acc) {
-        this.acc = acc;
+    public void setList(List<Account> list) {
+        this.accList = accList;
     }
     
     

@@ -17,8 +17,8 @@ public class UserService {
     public static List<User> list = new ArrayList<>();
     
     public List<User> createAllUsers() {
-        User m1 = new User(0, "Enda", "dublin", "en@gmail.com","123");
-        User m2 = new User(1, "Liam", "dublin", "li@gmail.com","123");
+        User m1 = new User(0, "Enda", "en@gmail.com","123");
+        User m2 = new User(1, "Liam", "li@gmail.com","123");
 
         list.add(m1);
         list.add(m2);
@@ -26,10 +26,9 @@ public class UserService {
        
     }
     
-   
     
-    public User getUser(int id) {
-        return list.get(id-1);
+    public User getUser(long userId) {
+        return list.get((int)userId-1);
     }
     
     public User createAcc(){
