@@ -2,29 +2,64 @@
 package com.mycompany.onlinebank.model;
 
 import java.util.Date;
+import javax.xml.bind.annotation.XmlRootElement;
+
+
 
 /**
  *
  * @author liyuanzhang
  */
+@XmlRootElement
 public class Transaction {
     
     private int transId;
-    private String trans;
+    //transType include: debit,credit
+    private String transType;
     //private Date TransCreated;
+    private Date date;
+    private String desc;
+    private double postBalance;
     
-
+    
+ 
     public Transaction() {
         
     }
 
-    public Transaction(int transId,String trans) {
+    public Transaction(int transId, String transType, String desc, double postBalance) {
         this.transId = transId;
-        this.trans = trans;
+        this.transType = transType;
+        this.desc = desc;
+        this.postBalance = postBalance;
     }
     
+    
+    
 
-   
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public double getPostBalance() {
+        return postBalance;
+    }
+
+    public void setPostBalance(double postBalance) {
+        this.postBalance = postBalance;
+    }
 
     public int getTransId() {
         return transId;
@@ -33,33 +68,17 @@ public class Transaction {
     public void setTransId(int transId) {
         this.transId = transId;
     }
-    
-    
 
-//    public Date getTransCreated() {
-//        return TransCreated;
-//    }
-//
-//    public void setTransCreated(Date TransCreated) {
-//        this.TransCreated = TransCreated;
-//    }
-
-    public String getTrans() {
-        return trans;
+    public String getTransType() {
+        return transType;
     }
 
-    public void setTrans(String trans) {
-        this.trans = trans;
+    public void setTransType(String transType) {
+        this.transType = transType;
     }
 
     
     
-    
-
+ 
       
-    
-    
-    
-    
-    
 }

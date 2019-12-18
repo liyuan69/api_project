@@ -1,54 +1,42 @@
 
 package com.mycompany.onlinebank.model;
 
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author liyuanzhang
- 
- 1.create pojo object(Plain Old Java Object)
- 
- 2.create constructor(empty and default) In order to return User 
- objects through our API in XML or JSON formats as part of our responses.
- 
- 3.create setter and getter
  */
-
 
 
 //indicate the JAXB framework which is the object to use for
 //marshalling/unmarshalling XML / JSON formats.
 @XmlRootElement 
 public class User {
-    private long id;
+    private int userId;
     private String name;
     private String address;
     private String email;
     private String password;
-    private Account[] acc;// store multiple accounts for User
+    private List<User> users; 
+    private List<Account> accounts;
 
-    // empty constractor
-    public User() {
-        
-    }
-    
-    // constractor with param
-    public User(long id, String name, String address, String email, String password) {
-        this.id = id;
+    public User(int userId, String name, String address, String email, String password, List<Account> accounts) {
+        this.userId = userId;
         this.name = name;
         this.address = address;
         this.email = email;
         this.password = password;
-        this.acc = new Account[0];
-    }
-    // create getter and setter
-    public long getId() {
-        return id;
+        this.accounts = accounts;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -83,13 +71,13 @@ public class User {
         this.password = password;
     }
 
-    public Account[] getAcc() {
-        return acc;
+    public List<User> getUsers() {
+        return users;
     }
 
-    public void setAcc(Account[] acc) {
-        this.acc = acc;
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
-    
-    
+
+
 }
