@@ -36,12 +36,12 @@ public class Database {
         
     
            
-           //create some user
-           User user1 = new User(2, "Enda", "dublin12", "en@gmail.com","1234",accountDB);
-           User user2 = new User(3, "Liam", "dublin24", "li@gmail.com","4567",accountDB);
+//           //create some user
+//           User user1 = new User(2, "Enda", "dublin12", "en@gmail.com","1234",accountDB);
+//           User user2 = new User(3, "Liam", "dublin24", "li@gmail.com","4567",accountDB);
            
-           userDB.add(user1);
-           userDB.add(user2);
+//           userDB.add(user1);
+//           userDB.add(user2);
 //  
 //        this.transId = transId;
 //        this.transType = transType;

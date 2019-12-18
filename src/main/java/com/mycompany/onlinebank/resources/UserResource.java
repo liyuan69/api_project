@@ -30,7 +30,7 @@ public class UserResource {
     @Path("/fetch/{userId}") 
     public Response getUsers(@PathParam("userID")int userId){
         Gson gson = new Gson();
-        return Response.status(Response.Status.CREATED).entity(gson.toJson(userService.getUsers(userId))).build();
+        return Response.status(Response.Status.CREATED).entity(gson.toJson(userService.getUser(userId))).build();
     }
    
     
